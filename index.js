@@ -18,6 +18,10 @@ app.use(cors());
 // Middleware to parse JSON requests
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Application Running!');
+});
+
 // Define the /generate endpoint
 app.post('/generate', async (req, res) => {
   const prompt = req.body.prompt;
